@@ -1,16 +1,13 @@
-import React, { useCallback, useEffect,useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import Header from "./Header";
-import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+
 import {
   selectedProduct,
   removeSelectedProduct,
-  incrementCartProduct,
-  CartProducts,
-  selectedCartProduct
+
 
 } from "../redux/actions/productsAction";
 import { addToCart } from "../features/cartslice";
@@ -21,8 +18,8 @@ const ProductDetails = () => {
 
   const { image, title, price, category, description } = product;
   const dispatch = useDispatch();
-  const history=useNavigate();
-  const [isAdded,setAdded]=useState(false)
+ 
+  // const [isAdded,setAdded]=useState(false)
 
 
   const fetchProductDetail = useCallback(async (id) => {
@@ -44,7 +41,7 @@ const ProductDetails = () => {
 
   const handleAddtoCart=(product)=>{
 dispatch(addToCart(product))
-setAdded(true)
+// setAdded(true)
   }
   return (
     <div className="ui grid container">
@@ -63,8 +60,8 @@ setAdded(true)
               </div>
               <div className="column rp">
                 <h1>{title}</h1>
-                <h2>
-                  <a href="" className="ui teal tag label">${price}</a>
+                <h2 className="ui teal tag label">
+                ${price}
                 </h2>
                 <h3 className="ui brown block header">{category}</h3>
                 <p>{description}</p>

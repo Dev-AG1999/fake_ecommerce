@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addProduct } from "../redux/actions/productsAction";
-import ProductDetails from "./ProductDetails";
+import {  useSelector } from "react-redux";
+// import { addProduct } from "../redux/actions/productsAction";
+// import ProductDetails from "./ProductDetails";
 import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -47,9 +47,9 @@ const Header = () => {
         <h2>FakeShop</h2>
         <div className=" ui rightside">
           {isClicked === true ? (
-            <div className="ui inputField">
+            <div    ref={myRef} className="ui inputField">
               <input
-                ref={myRef}
+             
                 className=" ui serch_input"
                 onChange={(e) => handleChange(e)}
                 value={category}
@@ -62,7 +62,7 @@ const Header = () => {
                   setClicked(false)
                 ) : (
                   <ul
-                  ref={myRef}
+                  // ref={myRef}
                     className="ui searched_items"
                     style={{
                       height: category.length === 0 ? "auto" : "500px",

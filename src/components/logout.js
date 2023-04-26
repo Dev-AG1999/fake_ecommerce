@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Logout.css";
-import { logout, selectUser } from "../features/userslice";
+import { selectUser } from "../features/userslice";
 
 const Logout = () => {
   const dispatch = useDispatch();
